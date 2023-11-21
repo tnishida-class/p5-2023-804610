@@ -10,5 +10,17 @@ function setup(){
     ellipse(x, y, 10);
   }
 }
-
+function star(cx, cy, r){
+  beginShape();
+  for(var i = 0; i < 5; i++){
+    let theta = TWO_PI * i * 2 / 5 - HALF_PI;
+    //let theta = TWO_PI * i * 1 / 5
+    let x = cx + cos(theta) * r;
+    let y = cy + sin(theta) * r;
+    noStroke();
+    fill (255,242,56);
+    vertex(x,y);
+  }
+  endShape(CLOSE);
+}
 // ヒント：section5-2 にある star 関数をここにコピーして、 draw 内で ellipse の代わりに使おう
